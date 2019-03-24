@@ -12,6 +12,7 @@ export default class DocsSource {
     this.global = options.global;
     this.repo = options.repo;
     this.defaultTag = options.defaultTag || 'master';
+    this.defaultClass = options.defaultClass;
     this.defaultFile = options.defaultFile || { category: 'general', id: 'welcome' };
     this.source = options.source || `https://github.com/${this.repo}/blob/`;
     this.branchFilter = options.branchFilter || (branch => branch !== 'master');
@@ -72,6 +73,7 @@ export default class DocsSource {
   }
 
   fetchDocs(tag) {
+    tag = 'docgen-test';
     return fetch(`https://raw.githubusercontent.com/${this.repo}/docs/${tag}.json`).then(json);
   }
 }
