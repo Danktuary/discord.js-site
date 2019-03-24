@@ -65,7 +65,7 @@
 
     computed: {
       showTutorialsSidebar() {
-        returntutorials.$route.params.category;
+        return this.$route.params.category;
       },
 
       togglePrivateLabel() {
